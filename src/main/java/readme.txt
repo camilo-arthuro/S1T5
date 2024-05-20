@@ -15,3 +15,5 @@ To execute the file.class we can use the command "java package/file".
 We use the "package/file" because the file.class is in a package
 
 To enter the route of the directory we can use the relative route ./N1EX1/Directory
+
+Exercise 2: We can follow the same steps of the exercise 1
