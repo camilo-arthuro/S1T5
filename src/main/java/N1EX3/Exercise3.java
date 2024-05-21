@@ -71,3 +71,10 @@ public class Exercise3 {
     }
 
 }
+
+/*  public String askString(String message) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println(message);
+    String userValue = scanner.nextLine();
+    return userValue;
+  }*/
