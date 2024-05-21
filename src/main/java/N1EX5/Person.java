@@ -1,4 +1,4 @@
-package N1EX5.Classes;
+package N1EX5;
 
 import java.io.Serializable;
 

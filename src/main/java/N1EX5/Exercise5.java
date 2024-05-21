@@ -1,7 +1,5 @@
 package N1EX5;
 
-import N1EX5.Classes.Person;
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -19,26 +17,30 @@ public class Exercise5 {
         personList[3] = new Person("Barbara Flores", 24);
         personList[4] = new Person("Ivan Fuentes", 30);
 
+        //Defining the path
+        System.out.println("Enter the path of the file: ");
+        relativePath = input.nextLine();
+
         //Serialize object
-        serObject(personList);
+        serObject(personList, relativePath);
 
         //Deserialize Object
-        desserObject();
+        desserObject(relativePath);
 
     }
 
-    public static void serObject(Person[] personList){
+    public static void serObject(Person[] personList, String relativePath){
         try (ObjectOutputStream outPut = new ObjectOutputStream(
-                new FileOutputStream("src/main/java/N1EX5/Files/file.ser"))){
+                new FileOutputStream(relativePath))){
             outPut.writeObject(personList);
         } catch (IOException e){
             System.out.println("File not found");
         }
     }
 
-    public static void desserObject(){
+    public static void desserObject(String relativePath){
         try (ObjectInputStream input = new ObjectInputStream(
-                new FileInputStream("src/main/java/N1EX5/Files/file.ser"))){
+                new FileInputStream(relativePath))){
             Person[] desserPerson = (Person[]) input.readObject();
 
             for (Person person :desserPerson){
@@ -48,4 +50,5 @@ public class Exercise5 {
             System.out.println("File not found");
         }
     }
+
 }
